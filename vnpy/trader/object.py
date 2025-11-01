@@ -209,6 +209,8 @@ class AccountData(BaseData):
 
     balance: float = 0
     frozen: float = 0
+    margin_loan: float | None = None
+    assure_asset: float | None = None
 
     def __post_init__(self) -> None:
         """"""

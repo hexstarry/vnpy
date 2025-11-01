@@ -550,6 +550,8 @@ class AccountMonitor(BaseMonitor):
         "balance": {"display": _("余额"), "cell": BaseCell, "update": True},
         "frozen": {"display": _("冻结"), "cell": BaseCell, "update": True},
         "available": {"display": _("可用"), "cell": BaseCell, "update": True},
+        "margin_loan":{"display": _("融资欠款"), "cell": BaseCell, "update": True},
+        "assure_asset":{"display": _("净资产"), "cell": BaseCell, "update": True},
         "gateway_name": {"display": _("接口"), "cell": BaseCell, "update": False},
     }
 
