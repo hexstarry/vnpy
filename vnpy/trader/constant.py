@@ -25,7 +25,10 @@ class Offset(Enum):
     CLOSE = _("平")
     CLOSETODAY = _("平今")
     CLOSEYESTERDAY = _("平昨")
-
+    CREDIT_BUY = "担保品买入"
+    CREDIT_SELL = "担保品卖出"
+    CREDIT_FIN_BUY= "融资买入"  
+    CREDIT_SLO_SELL = "融券卖出"
 
 class Status(Enum):
     """
