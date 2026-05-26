@@ -1,3 +1,59 @@
+# 4.4.0版本
+
+## 新增
+
+1. 新增微信通知功能，支持基于微信iLink协议的扫码绑定、消息推送、推送间隔配置和会话过期提示
+2. MainEngine新增send_notification函数，支持统一通过邮件和微信渠道发送通知
+3. vnpy.alpha增加自定义表达式函数注册机制register_functions
+4. vnpy.alpha增加数据处理函数：process_replace_inf、process_ts_norm、process_drop_feature、process_cs_fill_na
+5. DataProxy增加更多运算符支持：反向加减乘除、整除、取模、幂运算、负号和不等于比较
+6. 新增用于对接QuestDB高性能时序数据库的vnpy_questdb模块
+7. vnpy_esunny重构调整为基于易盛启明星V9 API接口开发，支持期货和黄金TD交易
+
+## 调整
+
+1. vnpy.alpha改进数据集、处理器、模型和回测相关实现，优化类型提示和数据处理流程
+2. DataProxy的比较运算结果统一返回pl.Int32，并补充相关单元测试
+3. 微信通知增加推送间隔控制，间隔内的新消息会暂存并合并发送
+4. 替换send_email为新的send_notification消息发送函数：vnpy_ctastrategy / vnpy_portfoliostrategy / vnpy_spreadtrading / vnpy_scripttrader
+5. vnpy_tora更新升级：行情API至v1.0.9_20250825、股票API至v4.1.6_20251121、期权API至v1.3.4_20230908
+6. vnpy_ctp中对于因为报单提交被拒绝导致的撤单状态，调整映射为拒单状态
+7. vnpy_ctp调整特殊情况撤单（非交易时段、资金不足等）的日志输出
+8. vnpy_rohon更新升级至6.7.2版本的底层API
+9. vnpy_tts更新升级至6.7.11版本的底层API，并增加Mac OS支持
+
+## 修复
+
+1. 修复loguru日志格式化错误
+2. vnpy.alpha修复AlphaLab查询信号文件路径错误的问题
+3. vnpy_rqdata修复下载数据时，由于end没有时区信息下载报错的问题
+4. vnpy_rqdata修复由于没有成交，导致实时行情中字段缺失的问题
+5. vnpy_tora修复Fens服务器登录的问题
+6. vnpy_spreadtrading修复算法成交判断中的四舍五入误差问题
+
+
+# 4.3.0版本
+
+## 新增
+
+1. vnpy.alpha增加WorldQuant的Alpha 101因子特征数据集
+
+## 调整
+
+1. vnpy_sec/vnpy_esunny升级适配4.0版本
+2. vnpy_ctabacktester的策略代码编辑功能支持cursor和pycharm编辑器
+3. vnpy_ctastrategy的回测引擎，增加RGR绩效统计指标（感谢上弦之月贡献）
+4. ArrayManager增加对于指标计算函数重载（Function Overload）的类型提示声明
+5. vnpy_ctp增加特殊情况撤单（非交易时段、资金不足等）的日志输出
+6. DataProxy的所有比较运算，直接返回pl.Int32（而不是Bool）
+7. 重构ts_slope / ts_rsquare / ts_resi算子函数
+
+## 修复
+
+1. vnpy_ib修复查询历史数据问题（query_history函数增加查询锁解决多线程冲突问题）
+2. vnpy_optionmaster修复深度虚值期权的隐含波动率计算收敛问题
+
+
 # 4.2.0版本
 
 ## 新增
@@ -23,6 +79,7 @@
 8. 全局配置中的log.level改为INFO（10），默认启用详细日志记录输出
 9. MainEngine增加交易功能函数的调用日志输出
 10. vnpy.alpha中的Dataset增加process_data函数，便于测试不同数据处理器的效果
+11. vnpy_ib更新支持ibapi至10.40.1版本
 
 
 ## 修复
