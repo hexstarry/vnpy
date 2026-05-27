@@ -1,0 +1,3 @@
+[submodule "vnpy_xt"]
+	path = vnpy_xt
+	url = git@github.com:hexstarry/vnpy_xt.git
