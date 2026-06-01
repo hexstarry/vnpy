@@ -1,3 +1,7 @@
 [submodule "vnpy_xt"]
 	path = vnpy_xt
 	url = git@github.com:hexstarry/vnpy_xt.git
+
+[submodule "vnpy_algotrading"]
+	path = vnpy_algotrading
+	url = git@github.com:hexstarry/vnpy_algotrading.git
