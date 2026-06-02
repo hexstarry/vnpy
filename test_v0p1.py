@@ -8,6 +8,7 @@ from vnpy_ctabacktester import CtaBacktesterApp
 
 # from vnpy_spreadtrading import SpreadTradingApp
 from vnpy_algotrading import AlgoTradingApp
+from vnpy_autorepay import AutorepayApp
 
 # from vnpy_optionmaster import OptionMasterApp
 from vnpy_portfoliostrategy import PortfolioStrategyApp
@@ -48,6 +49,7 @@ if __name__ == "__main__":
     main_engine.add_app(CtaBacktesterApp)
     # main_engine.add_app(SpreadTradingApp)
     main_engine.add_app(AlgoTradingApp)
+    main_engine.add_app(AutorepayApp)
     # main_engine.add_app(OptionMasterApp)
     main_engine.add_app(PortfolioStrategyApp)
     main_engine.add_app(ScriptTraderApp)
