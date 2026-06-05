@@ -8,3 +8,6 @@
 [submodule "vnpy_autorepay"]
 	path = vnpy_autorepay
 	url = git@github.com:hexstarry/vnpy_autorepay.git
+[submodule "vnpy_ctastrategy"]
+	path = vnpy_ctastrategy
+	url = git@github.com:hexstarry/vnpy_ctastrategy.git
